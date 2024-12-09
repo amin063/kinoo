@@ -1,9 +1,8 @@
 {
     "rewrites": [
-      {
-        "source": "/favlist/:id",
-        "destination": "/favlist/[id]"
-      }
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
     ]
-  }
-  
+}
