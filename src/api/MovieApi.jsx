@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const movieApiUrl = `http://www.omdbapi.com`
+const movieApiUrl = `https://www.omdbapi.com`
 
 export const movieApi = axios.create({
     baseURL: movieApiUrl
