@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
-import BasicBtn from '../buttons/BasicBtn';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav } from '../../redux/actions/fav.action';
+import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 function MovieCard({ Poster, Title, Type, Year, imdbID }) {
 
     const dispatch = useDispatch()
+    const list = useSelector((state) => state.favList)
+
+    const isLike = list.some((item) => item.imdbID === imdbID);
+
     const changeLike = (movie) => {
-        dispatch(addFav(movie))
-    }
+        dispatch(addFav(movie));
+    };
 
     return (
         <div className='p-5 text-center '>
@@ -21,13 +24,18 @@ function MovieCard({ Poster, Title, Type, Year, imdbID }) {
                     src={Poster}
                 />
                 <div className='absolute bottom-2 w-[100%] flex justify-center group-hover:shadow-[0px_0px_50px_50px_black]'>
-                <p className='absolute bottom-2 opacity-0 text-white font-bold transition duration-500 group-hover:opacity-100'>
-                    {Title}
-                </p>
+                    <p className='absolute bottom-2 opacity-0 text-white font-bold transition duration-500 group-hover:opacity-100'>
+                        {Title}
+                    </p>
                 </div>
-                
+
                 <div className='absolute right-2 top-2 bg-white p-1 rounded-full text-lg'>
-                    <FaRegHeart onClick={() => changeLike({ Poster, Title, imdbID })} />
+                    {isLike
+                        ?
+                        <FaHeart className='text-red-600' onClick={() => changeLike({ Poster, Title, imdbID })} />
+                        :
+                        <FaRegHeart onClick={() => changeLike({ Poster, Title, imdbID })} />
+                    }
                 </div>
             </div>
             <Link

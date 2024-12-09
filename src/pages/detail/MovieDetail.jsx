@@ -25,13 +25,13 @@ function MovieDetail() {
 
   console.log(movie);
   return (
-    <div className='flex gap-5 w-[90%] m-auto'>
+    <div className='flex flex-col gap-5 w-[90%] m-auto md:flex-row'>
       <div>
         <img src= {movie.Poster} />
       </div>
       <div className='flex flex-col justify-between'>
         <h1 className='text-2xl font-bold'>{movie.Title}</h1>
-        <ul className='flex gap-5'>
+        <ul className='flex flex-col gap-5 md:flex-row'>
           <li className='flex items-center gap-1 text-lg'><CiStar /> {movie.imdbRating}</li>
           <li className='flex items-center gap-1 text-lg'><IoTimer /> {movie.Runtime}</li>
           <li className='flex items-center gap-1 text-lg'><MdOutlineBrowserUpdated /> {movie.Year}</li>

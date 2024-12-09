@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import BasicBtn from '../../components/buttons/BasicBtn'
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFavItem } from '../../redux/actions/fav.action';
+import { deleteFavAllItem, deleteFavItem } from '../../redux/actions/fav.action';
 import { favServices } from '../../services/FavServices';
 
 function Sidebar() {
@@ -10,7 +10,7 @@ function Sidebar() {
     const list = useSelector((state) => state.favList)
     const dispatch = useDispatch();
 
-    console.log(list);
+
 
     const deleteItem = (param) => {
         dispatch(deleteFavItem(param))
@@ -18,7 +18,6 @@ function Sidebar() {
     const saveList = () => {
         console.log(input);
         console.log(list.length);
-
 
         if (list.length && input) {
             favServices.setFavList(
@@ -32,20 +31,17 @@ function Sidebar() {
                                 imdbId: element.imdbID,
                             }
                         }),
-                        userId: localStorage.getItem("userId")
-
-
+                    userId: localStorage.getItem("userId")
                 }
             )
+            dispatch(deleteFavAllItem())
         } else {
-            alert("Please select")
+            alert("Her yeri doldurun")
         }
     }
 
-
-
     return (
-        <div className='fixed flex flex-col gap-5 h-full bg-black z-10 w-[30%] text-white py-10 px-10'>
+        <div className='fixed flex flex-col gap-5 h-full bg-black z-10 w-[80%] text-white py-10 px-10 md:w-[50%] lg:w-[30%]'>
             <input
                 onChange={(e) => setInput(e.target.value)}
                 className='text-black p-2 rounded-md w-full' type="text" placeholder='Listin adı nedir' />

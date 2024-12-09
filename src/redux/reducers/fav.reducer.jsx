@@ -9,6 +9,8 @@ export const favReducer = (state = [], action) => {
 
         case "DELETE_FAV_ITEM":
             return state.filter((item) => item.imdbID !== action.payload.imdbID);
+            case "DELETE_ALL_ITEM":
+                return []
         default:
             return state;
     }

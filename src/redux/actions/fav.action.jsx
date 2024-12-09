@@ -11,3 +11,10 @@ export const deleteFavItem = (payload) => {
         payload: payload
     }
 }
+
+export const deleteFavAllItem = (payload) => {
+    return {
+        type: "DELETE_ALL_ITEM",
+        payload: payload
+    }
+}

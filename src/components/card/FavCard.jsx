@@ -9,9 +9,11 @@ function FavCard({title, poster}) {
                     className='transition duration-200 w-full rounded-md h-full group-hover:scale-125'
                     src={poster}
                 />
-                <p className='absolute bottom-2 shadow-black opacity-0 text-white font-bold transition duration-500 group-hover:opacity-100'>
+                 <div className='absolute bottom-2 w-[100%] flex justify-center group-hover:shadow-[0px_0px_50px_50px_black]'>
+                <p className='absolute bottom-2 opacity-0 text-white font-bold transition duration-500 group-hover:opacity-100'>
                     {title}
                 </p>
+                </div>
             </div>
 
         </div>
