@@ -46,7 +46,7 @@ function FavLists() {
         </div >
       )
       :
-      <div className='flex justify-center items-center h-[70vh]'>No favorite lists found</div>
+      <div className='flex justify-center items-center h-[70vh] font-bold'>No favorite lists found</div>
 
   )
 }
