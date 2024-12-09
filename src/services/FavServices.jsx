@@ -7,10 +7,7 @@ export const favServices = {
             console.log(res.data);
         } catch (error) {
             console.log(error);
-
         }
-
-
     },
     getFavList: async(id)=>{
         const res = await favApi.get(`favlists/${id}`)
