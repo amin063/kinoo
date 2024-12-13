@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { authServices } from '../../services/authServices'
 import { useDispatch } from 'react-redux'
 import { getUser } from '../../redux/actions/user.action'
+import { authServices } from '../../services/AuthServices'
 
 function Login() {
     const [formData, setFormData] = useState({})
