@@ -46,20 +46,3 @@ export const authServices = {
 
 
 
-// import { favApi } from "../api/FavApi"
-
-// export const authServices = {
-//     createUser: async (user) => {
-
-//         console.log(user.username);
-//         const res = await favApi.get(`/users/?username=${user.username}`)
-//         if (res.data.length) {
-//             alert("This username is already. Please try another username")
-//         }else{
-//             const postRes = await favApi.post("/users", user)
-//             if (!postRes.data) {
-//                 alert("An error occurred, please try again later.")
-//             }
-//         }
-//     }
-// }
