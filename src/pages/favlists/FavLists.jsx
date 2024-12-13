@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom';
 function FavLists() {
   
   const [favList, setFavList] = useState([]);
-  const userId = localStorage.getItem("userId")
+  const userId = localStorage.getItem("id")
 
 
   useEffect(() => {
     favServices.getFavLists(userId).then((data) => setFavList(data))
   }, [])
+
+  console.log(userId);
+  console.log(favList);
+  
+  
 
   const deleteList = (id) => {
     favServices.deleteFavList(id)
@@ -29,8 +34,13 @@ function FavLists() {
           <h1 className='font-bold text-2xl'>My List</h1>
           {
             favList.map((fav) => {
+              console.log("-----------");
+              
+              console.log(fav);
+
+              
               return (
-                <div className='flex gap-5 items-center w-[100%]'>
+                <div key={fav.id} className='flex gap-5 items-center w-[100%]'>
                   <Link
                     to={`/favlist/${fav.id}`}
                     className='w-[80%] rounded-md  p-3 border border-red-600' key={fav.id}>

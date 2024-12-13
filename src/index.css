@@ -6,3 +6,8 @@ body{
   font-family: "Poppins", sans-serif;
   background-color: rgb(255, 239, 239);
 }
+
+input{
+  border: 1px solid black;
+  outline: none;
+}

@@ -27,7 +27,7 @@ function MovieDetail() {
   return (
     <div className='flex flex-col gap-5 w-[90%] m-auto md:flex-row'>
       <div>
-        <img src= {movie.Poster} />
+        <img className='h-[100%] ' src= {movie.Poster} />
       </div>
       <div className='flex flex-col justify-between'>
         <h1 className='text-2xl font-bold'>{movie.Title}</h1>

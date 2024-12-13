@@ -8,6 +8,7 @@ import { favServices } from '../../services/FavServices';
 function Sidebar() {
     const [input, setInput] = useState("")
     const list = useSelector((state) => state.favList)
+    const user = useSelector((state)=> state.userDetails)
     const dispatch = useDispatch();
 
 
@@ -15,6 +16,7 @@ function Sidebar() {
     const deleteItem = (param) => {
         dispatch(deleteFavItem(param))
     }
+
     const saveList = () => {
         console.log(input);
         console.log(list.length);
@@ -31,7 +33,7 @@ function Sidebar() {
                                 imdbId: element.imdbID,
                             }
                         }),
-                    userId: localStorage.getItem("userId")
+                    userId: user.id
                 }
             )
             dispatch(deleteFavAllItem())
