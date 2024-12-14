@@ -13,10 +13,10 @@ function FavList() {
     <div className='w-[75%] m-auto max-w-[1120px]'>
       <FavCards />
       <div className='text-5xl flex gap-5 justify-center'>
-        <a target='_blank' href={`https://api.whatsapp.com/send?text=https://kinoo.vercel.app/#/favlist/${id}`} >
+        <a target='_blank' href={`https://api.whatsapp.com/send?text=https://kinoo.vercel.app/favlist/${id}`} >
           <IoLogoWhatsapp className='text-green-600' />
         </a>
-        <a href={`https://t.me/share?url=https://kinoo.vercel.app/#/favlist/${id}`} target='_blank'>
+        <a href={`https://t.me/share?url=https://kinoo.vercel.app/favlist/${id}`} target='_blank'>
           <FaTelegram className='text-blue-500' />
         </a>
       </div>

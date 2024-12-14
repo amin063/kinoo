@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter, Route, Routes } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import UserLayout from '../layout/UserLayout'
 import Home from '../pages/home/Home'
 import MovieDetail from '../pages/detail/MovieDetail'
@@ -8,7 +8,7 @@ import FavList from '../pages/favlist/FavList'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
 
-export const AppRoutes = createBrowserRouter = ([
+const AppRoutes = createBrowserRouter ([
   {
     path: "/",
     element: <UserLayout />,
@@ -26,7 +26,7 @@ export const AppRoutes = createBrowserRouter = ([
         element: <FavLists />
       },
       {
-        path: 'favlist/id',
+        path: 'favlist/:id',
         element: <FavList />
       }
     ]
@@ -38,7 +38,7 @@ export const AppRoutes = createBrowserRouter = ([
   {
     path: '/register',
     element: <Register />,
-  },
+  }
 ])
 
 export default AppRoutes
