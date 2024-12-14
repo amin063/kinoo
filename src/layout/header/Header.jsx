@@ -56,7 +56,7 @@ function Header() {
           className='border border-red-600 h-[30px]' type="text" />
         <div
           onClick={() => searchMovie()}
-          className='border cursor-pointer h-[30px] my-5 flex items-center px-2 bg-red-600 text-white'>
+          className='border cursor-pointer h-[30px] my-5 flex items-center px-2 border-red-600 bg-red-600 text-white'>
           Search
         </div>
       </div>
