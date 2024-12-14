@@ -8,7 +8,7 @@ import FavList from '../pages/favlist/FavList'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
 
-const AppRoutes = createBrowserRouter = ([
+export const AppRoutes = createBrowserRouter = ([
   {
     path: "/",
     element: <UserLayout />,
