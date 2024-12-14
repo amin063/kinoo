@@ -7,12 +7,16 @@ import { CiStar } from 'react-icons/ci';
 import { MdOutlineBrowserUpdated } from 'react-icons/md';
 import { BiCategory } from 'react-icons/bi';
 import { FaEarthEurope } from 'react-icons/fa6';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFav } from '../../redux/actions/fav.action';
 function MovieDetail() {
   const { id } = useParams()
   const [movie, setMovie] = useState({})
   const dispatch = useDispatch()
+  const list = useSelector((state) => state.favList)
+  console.log(list);
+  const isLike = list.some((item) => item.imdbID === movie.imdbID)
+
 
   useEffect(() => {
     movieServices.getMovieDetail(id)
@@ -27,7 +31,7 @@ function MovieDetail() {
   return (
     <div className='flex flex-col gap-5 w-[90%] m-auto md:flex-row'>
       <div>
-        <img className='h-[100%] ' src= {movie.Poster} />
+        <img className='h-[100%] ' src={movie.Poster} />
       </div>
       <div className='flex flex-col justify-between'>
         <h1 className='text-2xl font-bold'>{movie.Title}</h1>
@@ -49,7 +53,7 @@ function MovieDetail() {
             <p>{movie.Actors}</p>
           </div>
         </div>
-        <BasicBtn title={"Add List"} func={(e) => changeLike({ Title: movie.Title, imdbID: movie.imdbID })} />
+        <BasicBtn title={isLike ? "Remove List" : "Add List"} func={(e) => changeLike({ Title: movie.Title, imdbID: movie.imdbID })} />
       </div>
     </div>
   )
