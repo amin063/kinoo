@@ -14,7 +14,9 @@ function MovieCards() {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 '>
       {
-        movies?.map((movie) => <MovieCard key={movie.imdbID} {...movie} />)
+        movies?.length ?
+          movies?.map((movie) => <MovieCard key={movie.imdbID} {...movie} />)
+          : <div className='font-bold text-red-600 text-2xl'>Movie Not Found</div>
       }
     </div>
   )

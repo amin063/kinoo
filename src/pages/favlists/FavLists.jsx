@@ -4,7 +4,7 @@ import { IoMdRemoveCircle } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 function FavLists() {
-  
+
   const [favList, setFavList] = useState([]);
   const userId = localStorage.getItem("id")
 
@@ -13,10 +13,9 @@ function FavLists() {
     favServices.getFavLists(userId).then((data) => setFavList(data))
   }, [])
 
-  console.log(userId);
-  console.log(favList);
-  
-  
+
+
+
 
   const deleteList = (id) => {
     favServices.deleteFavList(id)
@@ -34,11 +33,6 @@ function FavLists() {
           <h1 className='font-bold text-2xl'>My List</h1>
           {
             favList.map((fav) => {
-              console.log("-----------");
-              
-              console.log(fav);
-
-              
               return (
                 <div key={fav.id} className='flex gap-5 items-center w-[100%]'>
                   <Link
@@ -56,7 +50,7 @@ function FavLists() {
         </div >
       )
       :
-      <div className='flex justify-center items-center h-[70vh] font-bold'>No favorite lists found</div>
+      <div className='flex justify-center items-center h-[70vh] font-bold text-red-600'>Loading...</div>
 
   )
 }
