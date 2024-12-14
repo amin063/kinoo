@@ -7,8 +7,6 @@ import { useParams } from 'react-router-dom'
 function FavList() {
   const { id } = useParams()
   console.log(id);
-  console.log(window.location.href);
-
   return (
     <div className='w-[75%] m-auto max-w-[1120px]'>
       <FavCards />
