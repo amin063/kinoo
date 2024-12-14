@@ -9,6 +9,7 @@ export const authServices = {
             const res = await favApi.get(`/users/?username=${user.username}`)
             if (res.data.length) {
                 alert("This username is already. Please try another username")
+                return
             }
         } catch (error) {
             alert("success!")
