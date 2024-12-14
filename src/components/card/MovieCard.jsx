@@ -13,14 +13,21 @@ function MovieCard({ Poster, Title, Type, Year, imdbID }) {
     const isLike = list.some((item) => item.imdbID === imdbID);
 
 
-    
+
     const changeLike = (movie) => {
         dispatch(addFav(movie));
     };
 
+
+
+
     return (
         <div className='p-5 text-center '>
+
             <div className='flex overflow-hidden relative justify-center h-full group'>
+                <div className='-z-10 opacity-0 fixed h-full w-full top-0 left-0 transition duration-700 group-hover:opacity-50'>
+                    <img src={Poster} className='h-full w-full object-cover' />
+                </div>
                 <img
                     className='transition duration-200 w-full h-full group-hover:scale-125'
                     src={Poster}

@@ -25,25 +25,24 @@ export const authServices = {
         }
     },
 
-        loginUser: async (user) => {
-
-            try {
-                const res = await favApi.get(`/users/?username=${user.username}&pass=${user.pass}`)
-                const realUsername = res.data[0].username
-                const realPass = res.data[0].pass
-                if (user.username === realUsername && user.pass === realPass) {
-                    console.log(res);
-                    return res.data
-                } else {
-                    alert("Wrong username or password")
-                }
-            } catch (error) {
-                alert("Wrong username or password catchdadi")
+    loginUser: async (user) => {
+        try {
+            const res = await favApi.get(`/users/?username=${user.username}&pass=${user.pass}`)
+            const realUsername = res.data[0].username
+            const realPass = res.data[0].pass
+            if (user.username === realUsername && user.pass === realPass) {
+                console.log(res);
+                return res.data
+            } else {
+                alert("Wrong username or password")
             }
-
-
+        } catch (error) {
+            alert("Wrong username or password catchdadi")
         }
+
+
     }
+}
 
 
 
