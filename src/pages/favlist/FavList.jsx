@@ -13,7 +13,7 @@ console.log(window.location.href);
     <div className='w-[75%] m-auto max-w-[1120px]'>
       <FavCards />
       <div className='text-5xl flex gap-5 justify-center'>
-        <a href={`https://api.whatsapp.com/send?text=${window.location.href}`} >
+        <a target='_blank' href={`https://api.whatsapp.com/send?text=${window.location.href}/favlist/${id}`} >
           <IoLogoWhatsapp className='text-green-600' />
         </a>
         <FaTelegram className='text-blue-500' />
