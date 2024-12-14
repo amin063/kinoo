@@ -41,6 +41,7 @@ function Sidebar() {
             alert("Her yeri doldurun")
         }
     }
+console.log(list);
 
     return (
         <div className='fixed flex flex-col gap-5 h-full bg-black z-10 w-[80%] text-white py-10 px-10 md:w-[50%] lg:w-[30%]'>
@@ -50,8 +51,9 @@ function Sidebar() {
             {/* FAV LIST ITEMS */}
             <ul className='flex flex-col gap-5'>
                 {list.map((item) => {
+                    
                     return (
-                        <div className='flex gap-2 items-center'>
+                        <div key={item.imdbID} className='flex gap-2 items-center'>
                             <li className='border border-red-600 w-[90%] p-2'>{item.Title}</li>
                             <div
                                 onClick={() => deleteItem(item)}

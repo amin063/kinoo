@@ -8,16 +8,20 @@ import { FaExchangeAlt } from "react-icons/fa";
 
 function Header() {
   const id = localStorage.getItem("id")
-  const [input, setInput] = useState("")
+  const [inputVal, setInputVal] = useState("")
   const dispatch = useDispatch()
   const user = useSelector((state) => state.userDetails)
+  const input = useSelector((state) => state.inputValue)
   const nav = useNavigate()
 
 
+  const inputChange = (e) => {
+    setInputVal(e.target.value)
+  }
 
   useEffect(() => {
     if (!localStorage.getItem("id")) {
-      nav('/login');
+      nav('/register');
     }
   }, [nav]);
 
@@ -27,11 +31,10 @@ function Header() {
   }, [])
 
 
-  const searchMovie = (s) => {
-    if (input) {
-      dispatch(setInputValue(s))
-    }
+  const searchMovie = () => {
+    dispatch(setInputValue(inputVal))
   }
+  console.log(input);
   return (
     <div>
       <div className='flex justify-between items-center w-[90%] m-auto my-5'>
@@ -49,10 +52,10 @@ function Header() {
       <hr className='border border-red-600' />
       <div className='flex justify-center items-center'>
         <input
-          onChange={(e) => setInput(e.target.value)}
+          onChange={inputChange}
           className='border border-red-600 h-[30px]' type="text" />
         <div
-          onClick={() => searchMovie(input)}
+          onClick={() => searchMovie()}
           className='border cursor-pointer h-[30px] my-5 flex items-center px-2 bg-red-600 text-white'>
           Search
         </div>

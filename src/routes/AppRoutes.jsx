@@ -17,9 +17,9 @@ function AppRoutes() {
           <Route path='/moviedetail/:id' element={<MovieDetail />} />
           <Route path='/favlists' element={<FavLists />} />
           <Route path='/favlist/:id' element={<FavList />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
         </Route>
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </div>
   )

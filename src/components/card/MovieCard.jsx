@@ -12,6 +12,8 @@ function MovieCard({ Poster, Title, Type, Year, imdbID }) {
 
     const isLike = list.some((item) => item.imdbID === imdbID);
 
+
+    
     const changeLike = (movie) => {
         dispatch(addFav(movie));
     };
