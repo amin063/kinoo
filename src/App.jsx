@@ -8,10 +8,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-
+      <RouterProvider router={AppRoutes} />
     </div>
   )
 }
